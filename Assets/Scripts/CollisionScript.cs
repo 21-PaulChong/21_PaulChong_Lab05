@@ -7,11 +7,20 @@ using UnityEngine.SceneManagement;
 public class CollisionScript : MonoBehaviour
 {
     public Text Scoretext;
+    public Text timer;
+    public float time;
     public int points;
 
    void Update()
    {
         Scoretext.text = "Score: " + points;
+        timer.text = "Time left: " + time.ToString("0:00");
+        time -= Time.deltaTime;
+
+        if(time<=0)
+        {
+            SceneManager.LoadScene("GameLoseScene");
+        }
    }
 
    private void OnCollisionEnter(Collision collision)
