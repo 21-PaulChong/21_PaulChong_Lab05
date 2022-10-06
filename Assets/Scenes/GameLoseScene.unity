@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.8329468, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 0.52363575, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -599,7 +599,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You win the game!
+  m_Text: You lost the game!
 --- !u!222 &1424929043
 CanvasRenderer:
   m_ObjectHideFlags: 0
