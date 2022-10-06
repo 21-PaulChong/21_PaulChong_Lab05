@@ -9,4 +9,10 @@ public class ButtonScript : MonoBehaviour
    {
         SceneManager.LoadScene("GameScene");
    }
+
+    void Update()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }
