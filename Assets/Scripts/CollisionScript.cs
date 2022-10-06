@@ -10,6 +10,7 @@ public class CollisionScript : MonoBehaviour
     public Text timer;
     public float time;
     public int points;
+    public ParticleSystem particles;
 
    void Update()
    {
@@ -23,20 +24,18 @@ public class CollisionScript : MonoBehaviour
         }
    }
 
-   private void OnCollisionEnter(Collision collision)
-   {
-        if(collision.gameObject.tag=="Coins")
-        {
-            Destroy(collision.gameObject);
-            points += 10;
-        }
-   }
-
    private void OnTriggerEnter(Collider other)
    {
         if(other.gameObject.tag=="Environment")
         {
             SceneManager.LoadScene("GameLoseScene");
         }
-   }
+
+        if (other.gameObject.tag == "Coins")
+        {
+            Destroy(other.gameObject);
+            points += 10;
+            particles.Play();
+        }
+    }
 }
