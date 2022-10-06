@@ -11,6 +11,7 @@ public class CollisionScript : MonoBehaviour
     public float time;
     public int points;
     public ParticleSystem particles;
+    public int coins;
 
    void Update()
    {
@@ -21,6 +22,11 @@ public class CollisionScript : MonoBehaviour
         if(time<=0)
         {
             SceneManager.LoadScene("GameLoseScene");
+        }
+
+        if(coins>6)
+        {
+            SceneManager.LoadScene("GameWinScene");
         }
    }
 
@@ -35,6 +41,7 @@ public class CollisionScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             points += 10;
+            coins++;
             particles.Play();
         }
     }
